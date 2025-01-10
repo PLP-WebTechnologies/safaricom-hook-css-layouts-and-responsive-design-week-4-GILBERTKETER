@@ -1,0 +1,136 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+header .logo {
+    font-size: 1.5em;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content .text {
+    font-size: 1.2em;
+}
+
+.content .image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    /* Small Screens: Stack all sections vertically */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    footer ul {
+        text-align: center;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Medium Screens: Stack the content columns but keep header and footer horizontal */
+    header {
+        flex-direction: row;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Large Screens: Display the layout as designed with Flexbox and Grid */
+    .content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Bonus: Animations for Resizing */
+@media (min-width: 601px) {
+    body {
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            transition: background-color 0.3s ease-in-out;
+        }
+    }
+}
